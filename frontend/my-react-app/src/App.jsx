@@ -6,31 +6,86 @@ import Swal from "sweetalert2";
 import lenteja from'./img/cultivo-lenteja.jpg'
 import cocacola from './img/cocacola.jpg'
 import arroz from './img/arroz.jpg'
+import chocorramo from './img/Chocorramo.jpg'
+import duoPack from './img/duoPack.jpg'
+import zenu from './img/zenu.jpg'
+import atun from './img/atun.jpg'
+import rizadas from './img/rizadas.jpg'
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const manejarClik = () =>{
-    Swal.fire({
-      title: "Buen trabajo",
-      text: "Hiciste click en el boton de sweetAlert2",
-      icon: "success",
-      confirmButtonText: "¡Entendido!"
-    })
-  }
   return(
-    <body>
+      <div className="main-h-screen flex flex-col items-center bg-gray-100 p-4">
+        <Navegacion/>
+        <main className="flex flex-col items-center p-4 w-full max-w-7xl mx-auto">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <h1 className="text-5xl font-extrabold text-blue-500 mb-8">Nuestra tienda online</h1>
+                <h2 className="text-3xl font-extrabold text-gray-500 mt-12 mb-8">Nuestros Productos </h2>
+                <TargetaProducto
+                  nombre={'Arroz Roa'}
+                  precio={2000}
+                  imagenUrl={arroz}
+                />
+              </>
+            }/>
 
-    <Navegacion/>
-    <section className="flex flex-col items-center justify-center bg-gray-100 p-4 w-full">
-      <div className="text-7xl text-blue-700 py-5">
-        <h1>Nuestra tienda online</h1>
+            <Route path="/Usuarios" element={
+              <>
+                <h2 className="text-3xl font-extrabold text-gray-600">Lista de usuarios</h2>
+              </>
+            }/>
+            <Route path="/Productos" element={
+              <>
+                <TargetaProducto
+                  nombre={'Lentejas'}
+                  precio={1500}
+                  imagenUrl={lenteja}
+                />
+                <TargetaProducto
+                  nombre={'Cocacola en lata'}
+                  precio={2000}
+                  imagenUrl={cocacola}
+                />
+                <TargetaProducto
+                  nombre={'Chocorramo'}
+                  precio={2500}
+                  imagenUrl={chocorramo}
+                />
+              </>
+            }/>
+            <Route path="/Ofertas" element={
+              <div className="w-full text-center">
+                <h2 className="">Ofertas exclusivas!</h2>
+                <p>No te pierdas de estas ofertas</p>
+                <div className="flex flex-wrap justify-center gap-6">
+                  <TargetaProducto 
+                  nombre={'Cocacola paga 1 lleva 3'}
+                  precio={20000}
+                  imagenUrl={duoPack}
+                  />
+                  <TargetaProducto 
+                  nombre={'Rizadas paquete completo'}
+                  precio={10000}
+                  imagenUrl={rizadas}
+                  />
+                  <TargetaProducto 
+                  nombre={'Atunes x5'}
+                  precio={30000}
+                  imagenUrl={atun}
+                  />
+                  <TargetaProducto 
+                  nombre={'Paquete completo zenu'}
+                  precio={20000}
+                  imagenUrl={zenu}
+                  />
+                </div>
+              </div>
+            }/>
+          </Routes>
+        </main>
       </div>
-      <section className="flex flex-grap">
-      <TargetaProducto nombre={"Arroz"} precio={1200} imagenUrl={arroz}/>
-      <TargetaProducto nombre={"Lentejas"} precio={1000} imagenUrl={lenteja}/>
-      <TargetaProducto nombre={"Gaseosa"} precio={2000} imagenUrl={cocacola}/>
-    </section>
-    </section>
-    </body>
   )
 } 
 

@@ -3,9 +3,12 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './css.css'
 import 'tailwindcss'
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter> {/*En vuelve tu app en browserRouter */}
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )

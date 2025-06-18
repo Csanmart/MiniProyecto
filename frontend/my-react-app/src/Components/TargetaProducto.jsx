@@ -16,8 +16,8 @@ const TargetaProducto = ({nombre, precio, imagenUrl}) =>{
     const manejadoVerDetalles = () =>{
         Swal.fire({
             title:'¡Buen trabajo!',
-            text: `Viendo detalles de "${nombre}"`,
-            icon: 'success',
+            text: `Viendo detalles de "${nombre}, ${precio}"`,
+            icon: 'info',
             showCloseButton: false,
             timer: 3000,
              timerProgressBar: true
@@ -29,7 +29,9 @@ const TargetaProducto = ({nombre, precio, imagenUrl}) =>{
       <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{nombre}</h3>
       <p className="text-2xl font-bold text-blue-600 mb-4">${precio}</p>
       <div className="flex space-x-2 mt-auto"> 
-        <BotonPrimario texto="Añadir al Carrito" onClick={manejadorAgregarCarrito} />       
+
+        <BotonPrimario texto="Añadir al Carrito" onClick={manejadorAgregarCarrito} />
+               
         <BotonPrimario texto="Ver Detalles" onClick={manejadoVerDetalles} />
       </div>
     </div>
