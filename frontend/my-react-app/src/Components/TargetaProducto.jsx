@@ -16,7 +16,7 @@ const TargetaProducto = ({nombre, precio, imagenUrl}) =>{
     const manejadoVerDetalles = () =>{
         Swal.fire({
             title:'¡Buen trabajo!',
-            text: `Viendo detalles de "${nombre}, ${precio}"`,
+            text: `Viendo detalles de "${nombre},  $${precio}"`,
             icon: 'info',
             showCloseButton: false,
             timer: 3000,
